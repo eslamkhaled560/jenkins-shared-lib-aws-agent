@@ -30,7 +30,7 @@ pipeline {
 	stage('Cleanup') {
             steps {
 		sh "${D} stop python"
-		sh "${D} stop python"
+		sh "${D} rm python"
 		echo "Cleanup for environment ${params.ENVIRONMENT} is successful"
             }
         }
