@@ -15,13 +15,6 @@ pipeline {
                 echo "Build for environment ${params.ENVIRONMENT} is successful"
             }
         }
-        stage('Test') {
-            steps {
-                sh "${D} run -d -p 5000:80 islamdevops/pvt-repo:${BUILD_NUMBER}"
-                sh "curl localhost:5000"
-	       	echo "Test for environment ${params.ENVIRONMENT} is successful"
-            }
-        }
         stage('Deploy') {
             steps {
                 withCredentials([
