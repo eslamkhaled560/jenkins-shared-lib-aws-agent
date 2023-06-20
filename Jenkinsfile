@@ -17,8 +17,7 @@ pipeline {
         }
 	 stage('Test') {
             steps {
-		sh "${D} run -d --name python islamdevops/simple-docker:${BUILD_NUMBER}"
-		sh "${D} exec -it python bash -- python /app/app.py"
+		sh "${D} run -d --name python islamdevops/simple-docker:${BUILD_NUMBER} python /app/app.py"
             }
         }
         stage('Deploy') {
