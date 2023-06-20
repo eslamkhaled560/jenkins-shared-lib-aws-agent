@@ -15,8 +15,7 @@ pipeline {
             steps {
                 sh '${D} run -d -p 5000:80 islamdevops/pvt-repo:${BUILD_NUMBER}'
                 sh 'curl localhost:5000'
-	        	sh '${D} stop islamdevops/pvt-repo:${BUILD_NUMBER}'
-	        	echo 'Test is successful'
+	       	echo 'Test is successful'
             }
         }
     stages {
@@ -26,10 +25,16 @@ pipeline {
                     usernamePassword(credentials: 'docker-hub', usernameVariable: USER, passwordVariable: PWD)
                 ])
                 sh '${D} login -t -u ${USER} -p ${PWD}'
-	        	sh '${D} push islamdevops/pvt-repo:${BUILD_NUMBER}'
-	        	echo 'Deployment is successful'
+	        sh '${D} push islamdevops/pvt-repo:${BUILD_NUMBER}'
+		echo 'Deployment is successful'
             }
         }
-    
+	stage('Cleanup') {
+            steps {
+                sh 'docker stop $(docker ps -q)'
+                sh 'docker rm $(docker ps -a -q)'
+		echo "Cleanup is successful"
+            }
+        }
     }
 }
