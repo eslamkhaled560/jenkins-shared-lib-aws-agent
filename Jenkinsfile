@@ -23,8 +23,8 @@ pipeline {
         }
 	stage('Cleanup') {
             steps {
-                sh "docker stop $(docker ps -q)"
-                sh "docker rm $(docker ps -a -q)"
+                sh "docker stop \$(docker ps -q)"
+                sh "docker rm \$(docker ps -a -q)"
 		echo "Cleanup for environment ${params.ENVIRONMENT} is successful"
             }
         }
