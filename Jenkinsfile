@@ -17,13 +17,21 @@ pipeline {
         }
 	 stage('Test') {
             steps {
-		sh "${D} run -d --name python1 islamdevops/simple-docker:${BUILD_NUMBER} python /app/app.py"
+		sh "${D} run -d --name python islamdevops/simple-docker:${BUILD_NUMBER}"
+		echo "Test for environment ${params.ENVIRONMENT} is successful"
             }
         }
         stage('Deploy') {
             steps {
 	        sh "${D} push islamdevops/simple-docker:${BUILD_NUMBER}"
 		echo "Deployment for environment ${params.ENVIRONMENT} is successful"
+            }
+        }
+	stage('Cleanup') {
+            steps {
+		sh "${D} stop python"
+		sh "${D} stop python"
+		echo "Cleanup for environment ${params.ENVIRONMENT} is successful"
             }
         }
     }
