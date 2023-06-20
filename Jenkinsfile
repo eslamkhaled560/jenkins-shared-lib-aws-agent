@@ -23,8 +23,8 @@ pipeline {
         }
 	stage('Cleanup') {
             steps {
-                sh "docker stop islamdevops/simple-docker:${BUILD_NUMBER}"
-                sh "docker rm islamdevops/simple-docker:${BUILD_NUMBER}"
+                sh "docker stop $(docker ps -q)"
+                sh "docker rm $(docker ps -a -q)"
 		echo "Cleanup for environment ${params.ENVIRONMENT} is successful"
             }
         }
