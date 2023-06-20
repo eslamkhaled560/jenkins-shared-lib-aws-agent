@@ -34,8 +34,8 @@ pipeline {
         }
 	stage('Cleanup') {
             steps {
-                sh "docker stop $(docker ps -q)"
-                sh "docker rm $(docker ps -a -q)"
+                sh "docker stop islamdevops/pvt-repo:${BUILD_NUMBER}"
+                sh "docker rm islamdevops/pvt-repo:${BUILD_NUMBER}"
 		echo "Cleanup for environment ${params.ENVIRONMENT} is successful"
             }
         }
