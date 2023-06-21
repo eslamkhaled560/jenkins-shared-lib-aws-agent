@@ -60,6 +60,10 @@ Organization Folders enable Jenkins to monitor an entire GitHub Organization, Bi
 
 ![5](https://github.com/eslamkhaled560/simple-app/assets/54172897/443f2117-1f7b-4bad-bc29-41b684e2fea4)
 
+- Console output
+
+![pipeline-output](https://github.com/eslamkhaled560/simple-app/assets/54172897/2060e63e-ac72-495e-a304-7efb5496df29)
+
 -----------------------------------------
 ## 7- Create another multibranch pipeline and filter branches to contain only (master , dev , test )
 
