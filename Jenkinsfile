@@ -17,7 +17,7 @@ pipeline {
         }
 	 stage('Test') {
             steps {
-		sh "${D} run -d --name python islamdevops/simple-docker:${BUILD_NUMBER}"
+		sh "${D} run -d --name python-${BRANCH_NAME} islamdevops/simple-docker:${BUILD_NUMBER}"
 		echo "Test for environment ${params.ENVIRONMENT} is successful"
             }
         }
@@ -29,8 +29,8 @@ pipeline {
         }
 	stage('Cleanup') {
             steps {
-		sh "${D} stop python"
-		sh "${D} rm python"
+		sh "${D} stop python-${BRANCH_NAME}"
+		sh "${D} rm python-${BRANCH_NAME}"
 		echo "Cleanup for environment ${params.ENVIRONMENT} is successful"
             }
         }
