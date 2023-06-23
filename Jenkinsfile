@@ -1,7 +1,7 @@
 @Library('shared-lib') _
 
 pipeline {
-    agent any
+    agent {label 'aws-agent'}
 
     stages {
 	stage('git cofiguration') {
