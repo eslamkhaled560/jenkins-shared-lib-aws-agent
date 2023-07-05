@@ -1,7 +1,7 @@
 # Description:
 
 - Implemented an automated process for building and pushing a Docker image to Docker Hub, using a shared libraary running on an AWS agent, which is later utilized by Kubernetes during deployment.       
-- Jenkins Shared Library [Link](https://github.com/eslamkhaled560/jenkins-shared-library/tree/main).
+- Jenkins Shared Library Repository: [Link](https://github.com/eslamkhaled560/jenkins-shared-library/tree/main).
 
 -----------------------------------------
 # Steps:
