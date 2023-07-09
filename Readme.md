@@ -6,7 +6,7 @@
 -----------------------------------------
 # Output:
 
-- Building ```dev``` branch in ```multibranch-simple-app```
+- Building ```dev``` branch in ```jenkins-shared-lib-aws-agent```
 
 ![8](https://github.com/eslamkhaled560/shared-lib-pipeline/assets/54172897/5b241550-3971-43ab-a42a-90c76330dd60)
 
