@@ -1,6 +1,6 @@
 # Description:
 
-- Implemented an automated process for building and pushing a Docker image to Docker Hub, using a shared libraary running on an AWS agent, which is later utilized by Kubernetes during deployment.       
+- Implemented an automated process for building and pushing a Docker image to Docker Hub, using a shared library running on an AWS agent, which Kubernetes later utilize during deployment.       
 - Jenkins Shared Library Repository: [Link](https://github.com/eslamkhaled560/jenkins-shared-library/tree/main)
 
 -----------------------------------------
@@ -20,7 +20,7 @@
 ## 1- Setup Jenkins Server
 - Run the following:
 ```
- # Docker image fom jenkins with docker
+ # Docker image from jenkins with docker
   docker build -f ./Dockerfile-jenkins -t jenkins-docker
  # Run docker container
   docker run -d  -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock -v jenkins_home:/var/jenkins_home jenkins-docker
